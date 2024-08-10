@@ -7,7 +7,9 @@ from predict_salary import predict_rub_salary
 
 load_dotenv()
 API_KEY = os.environ['API_SJ_KEY']
+
 url = "https://api.superjob.ru/2.0/vacancies/"
+
 headers = {
     "X-Api-App-Id": API_KEY
 }

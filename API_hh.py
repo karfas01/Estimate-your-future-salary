@@ -3,6 +3,7 @@ from predict_salary import predict_rub_salary
 
 
 url = "https://api.hh.ru/vacancies"
+
 languages = [
     "Python",
     "C",

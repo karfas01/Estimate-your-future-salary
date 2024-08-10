@@ -17,7 +17,6 @@ def create_table(statistics, table_title):
     table.title = table_title
     return table.table
 
-
 sj_statistics = get_sj_statistics()
 sj_title = "Super Job Moscow"
 print(create_table(sj_statistics, sj_title))
