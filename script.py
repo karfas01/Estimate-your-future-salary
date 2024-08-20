@@ -17,10 +17,16 @@ def create_table(statistics, table_title):
     table.title = table_title
     return table.table
 
-sj_statistics = get_sj_statistics()
-sj_title = "Super Job Moscow"
-print(create_table(sj_statistics, sj_title))
 
-hh_statistics = get_hh_statistics()
-hh_title = "Head Hunter Moscow"
-print(create_table(hh_statistics, hh_title))
+def main():
+    sj_statistics = get_sj_statistics()
+    sj_title = "Super Job Moscow"
+    print(create_table(sj_statistics, sj_title))
+
+    hh_statistics = get_hh_statistics()
+    hh_title = "Head Hunter Moscow"
+    print(create_table(hh_statistics, hh_title))
+
+
+if __name__ == '__main__':
+    main()
