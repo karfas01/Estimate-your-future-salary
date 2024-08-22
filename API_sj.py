@@ -66,7 +66,7 @@ def get_sj_statistics(api_key):
         else: 
             average_salary = 0
         
-        vacancies_found = response.json()["total"]
+        vacancies_found = platform_answer["total"]
 
         vacancies_statistics[language] = {
                 "vacancies_found": vacancies_found,

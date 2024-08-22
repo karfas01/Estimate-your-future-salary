@@ -42,17 +42,18 @@ def get_hh_statistics():
             }
             response = requests.get(url, params=params)
             response.raise_for_status()
-            vacancies = response.json()['items']
+            platform_answer = response.json()
+            vacancies = platform_answer['items']
             for vacancy in vacancies:
                 vacancy_salary = vacancy["salary"]
                 if vacancy_salary and vacancy_salary['currency']=="RUR":
                     vacancies_processed = vacancies_processed+1
                     sum = sum + predict_rub_salary(vacancy_salary["from"], vacancy_salary["to"])
 
-            if page >= response.json()["pages"]-1:
+            if page >= platform_answer["pages"]-1:
                 break
 
-        vacancies_found = response.json()['found']
+        vacancies_found = platform_answer['found']
         average_salary = sum/vacancies_processed
         vacancies_statistics[language] = {
                 "vacancies_found": vacancies_found,
