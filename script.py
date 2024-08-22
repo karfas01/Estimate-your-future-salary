@@ -24,6 +24,7 @@ def main():
     load_dotenv()
     api_key = os.environ['API_SJ_KEY']
 
+
     sj_statistics = get_sj_statistics(api_key)
     sj_title = "Super Job Moscow"
     print(create_table(sj_statistics, sj_title))

@@ -9,6 +9,11 @@ def get_hh_statistics():
 
     url = "https://api.hh.ru/vacancies"
 
+    vacancies_statistics = {}
+    per_page = 100
+    page = 0
+    area = 1
+
     languages = [
         "Python",
         "C",
@@ -24,11 +29,6 @@ def get_hh_statistics():
         "Javascript",
     ]
 
-    vacancies_statistics = {}
-    page = 0
-
-    area = 1
-    per_page = 100
 
     for language in languages:
         vacancies_processed = 0
@@ -54,7 +54,12 @@ def get_hh_statistics():
                 break
 
         vacancies_found = platform_answer['found']
-        average_salary = sum/vacancies_processed
+
+        if vacancies_processed:
+            average_salary = sum/vacancies_processed
+        else: 
+            average_salary = 0
+
         vacancies_statistics[language] = {
                 "vacancies_found": vacancies_found,
                 "vacancies_processed": vacancies_processed,

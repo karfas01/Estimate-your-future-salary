@@ -8,10 +8,6 @@ def get_sj_statistics(api_key):
 
     url = "https://api.superjob.ru/2.0/vacancies/"
 
-    headers = {
-        "X-Api-App-Id": api_key
-    }
-
     languages = [
         "Python",
         "C",
@@ -27,11 +23,15 @@ def get_sj_statistics(api_key):
         "Javascript",
     ]
 
+
+    headers = {
+        "X-Api-App-Id": api_key
+    }
+
     vacancies_statistics = {}
-
-    catalogues = 48
     quantity_vacancies_number = 100
-
+    catalogues = 48
+    
     for language in languages:
         
         vacancies_processed = 0
