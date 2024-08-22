@@ -24,12 +24,26 @@ def main():
     load_dotenv()
     api_key = os.environ['API_SJ_KEY']
 
+    languages = [
+        "Python",
+        "C",
+        "C#",
+        "1С",
+        "Go",
+        "C++",
+        "PHP",
+        "SQL",
+        "Ruby",
+        "Java",
+        "Rust",
+        "Javascript",
+    ]
 
-    sj_statistics = get_sj_statistics(api_key)
+    sj_statistics = get_sj_statistics(api_key, languages)
     sj_title = "Super Job Moscow"
     print(create_table(sj_statistics, sj_title))
 
-    hh_statistics = get_hh_statistics()
+    hh_statistics = get_hh_statistics(languages)
     hh_title = "Head Hunter Moscow"
     print(create_table(hh_statistics, hh_title))
 

@@ -5,7 +5,7 @@ from itertools import count
 from predict_salary import predict_rub_salary
 
 
-def get_hh_statistics():
+def get_hh_statistics(languages):
 
     url = "https://api.hh.ru/vacancies"
 
@@ -13,22 +13,6 @@ def get_hh_statistics():
     per_page = 100
     page = 0
     area = 1
-
-    languages = [
-        "Python",
-        "C",
-        "C#",
-        "1С",
-        "Go",
-        "C++",
-        "PHP",
-        "SQL",
-        "Ruby",
-        "Java",
-        "Rust",
-        "Javascript",
-    ]
-
 
     for language in languages:
         vacancies_processed = 0

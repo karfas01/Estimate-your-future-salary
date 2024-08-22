@@ -4,25 +4,9 @@ from itertools import count
 from predict_salary import predict_rub_salary
 
 
-def get_sj_statistics(api_key):
+def get_sj_statistics(api_key, languages):
 
     url = "https://api.superjob.ru/2.0/vacancies/"
-
-    languages = [
-        "Python",
-        "C",
-        "C#",
-        "1С",
-        "Go",
-        "C++",
-        "PHP",
-        "SQL",
-        "Ruby",
-        "Java",
-        "Rust",
-        "Javascript",
-    ]
-
 
     headers = {
         "X-Api-App-Id": api_key
@@ -58,8 +42,6 @@ def get_sj_statistics(api_key):
 
             if not platform_answer["more"]:
                 break
-
-      
 
         if vacancies_processed:
             average_salary = sum/vacancies_processed
