@@ -1,16 +1,10 @@
-import os
 import requests
 from itertools import count 
-from dotenv import load_dotenv
-
 
 from predict_salary import predict_rub_salary
 
 
-def get_sj_statistics():
-
-    load_dotenv()
-    api_key = os.environ['API_SJ_KEY']
+def get_sj_statistics(api_key):
 
     url = "https://api.superjob.ru/2.0/vacancies/"
 

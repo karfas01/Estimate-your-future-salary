@@ -1,5 +1,7 @@
 from terminaltables import AsciiTable
+import os
 
+from dotenv import load_dotenv
 from API_sj import get_sj_statistics
 from API_hh import get_hh_statistics
 
@@ -19,7 +21,10 @@ def create_table(statistics, table_title):
 
 
 def main():
-    sj_statistics = get_sj_statistics()
+    load_dotenv()
+    api_key = os.environ['API_SJ_KEY']
+
+    sj_statistics = get_sj_statistics(api_key)
     sj_title = "Super Job Moscow"
     print(create_table(sj_statistics, sj_title))
 
